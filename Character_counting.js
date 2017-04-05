@@ -7,21 +7,19 @@
 function countLetters(inputString) {
 
 // REMOVE EMPTY SPACES
-  var myString = inputString.split(" ").join("");
-  var myObject = {
-
-  };
+  var myString = inputString.replace(/\s/g,"");
+  var myObject = {};
 
   for(i in myString){
 // CHECK IF UNDEFINED AS OF YET AND ADD DEFAULT
-    if(typeof myObject[myString[i]] === "undefined"){
+    if(!myObject[myString[i]]){
        myObject[myString[i]] = 1;
     } else {
       myObject[myString[i]] += 1;
     }
   }
-    return myObject;
 
+  return myObject;
 }
 
   // DO I NEED A NEW KEY IN MY OBJECT ?
